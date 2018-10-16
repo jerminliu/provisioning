@@ -9,3 +9,6 @@ Setting up environment:
   vault password file in /etc/ansible/.vault_pass
   aws pem key at: /etc/ansible/ssh_keys/aws.pem
   encrypted variables file at: /etc/ansible/group_vars/private.yml
+
+Creating AWS Instance:
+  ansible-playbook create_ec2.yml --extra-vars 'ec2_type=docker'
