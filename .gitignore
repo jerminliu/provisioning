@@ -1,0 +1,14 @@
+*.*~
+.DS_Store
+\#*\#*
+*.pyc
+*.bak
+*.retry
+*.idea
+*.vagrant
+*.project
+*.pydevproject
+.metadata
+/.idea
+.gradle
+*.orig

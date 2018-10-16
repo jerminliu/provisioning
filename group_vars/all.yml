@@ -1,0 +1,6 @@
+---
+ec2_instance_type: "t2.micro"
+ec2_tag_Name: "Webserver"
+ec2_tag_Type: "webserver"
+ec2_tag_Environment: "production"
+ec2_volume_size: 8
