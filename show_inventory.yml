@@ -1,0 +1,11 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: "Inventory Hostname"
+    debug: msg="Inventory Hostname- {{inventory_hostname}}"
+
+  - name: "Ansible Hostname"
+    debug: msg="{{group_names}}"
