@@ -1,0 +1,28 @@
+---
+- hosts: all
+  connection: "local"
+  gather_facts: false
+
+  vars_files:
+    - /etc/ansible/group_vars/private.yml
+
+  tasks:
+  - name: "Inventory Hostname"
+    debug:
+      msg: "Deleting {{inventory_hostname}}"
+
+  - name: "Remove tagged EC2 instances from security group"
+    ec2:
+      state: "running"
+      region: "{{ ec2_region }}"
+      instance_ids: "{{ ec2_id }}"
+      group_id: "{{ ec2_security_group }}"
+    delegate_to: "localhost"
+
+  - name: "Terminate tagged EC2 instances"
+    ec2:
+      state: "absent"
+      region: "{{ ec2_region }}"
+      instance_ids: "{{ ec2_id }}"
+      wait: true
+    delegate_to: "localhost"

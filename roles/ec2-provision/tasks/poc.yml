@@ -1,0 +1,6 @@
+---
+
+- name: Show type
+  debug: var="{{ec2_type}}"
+
+
